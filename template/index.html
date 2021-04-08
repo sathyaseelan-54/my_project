@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Latest compiled and minified JavaScript -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="{% url 'index' %}">ShopToMe</a>
+        <button class="navbar-toggler" type="button" data-toggle = "collapse" data-target="CollapseNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+  <!-- Links -->
+
+  <ul class="navbar-nav justify-content-end">
+
+    <li class="nav-item active">
+      <a class="nav-link" href="{% url 'index' %}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'product' %}">Product</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About</a>
+    </li>
+      <li class="nav-item">
+          <a  class="nav-link" href="{% url 'login' %}" >Login</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'signup'%}">Sign</a>
+      </li>
+      <li class="nav-item">
+          <a class = "nav-link" href="{% url 'mycart' %}">Mycart</a>
+      </li>
+{% if user.is_authenticated %}
+	  <ul class="nav-justify-content-end">
+		  <li class="nav-link" style="text-align:right" >    Hi {{ user.username }}!</li></ul>
+		  <li class="nav-link" >
+		  	<a href="{% url 'logout' %}" class="nav-item">Logout</a>
+	  	</li>
+{% endif %}
+  </ul>
+
+
+
+
+</nav>
+
+<!-----end navbar--->
+
+{% block content %}
+
+
+<section class="main-container">
+		<article class="index-into">
+			<div class="jumbotron">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8">
+							<article>
+							<div class="banner-title">
+							<h1>GET START<br>YOUR <br>SHOPPING</h1>
+								<button type="button" class="btn btn-danger btn-md">   BUY NOW</button>
+							</div>
+							</article>
+
+						</div>
+
+
+						<div class="col-lg-4">
+							<div class="container">
+							<div class="banner-title-2">
+								<h2>SAVING UP TO 50%</h2>
+							</div>
+							</div>
+							<form >
+								<div class="form-inline">
+									<input type="text" class="form-control" size="23" name="" placeholder="Search" style="border-radius: 25px 0 0 25px">
+
+									<button type="button" class="btn btn-info btn-md" style="border-radius: 0 25px 25px 0"><b >search</b>  <span class="glyphicon glyphicon-search"></span></button>
+									</div>
+
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</article>
+
+
+</section>
+
+
+<section class="body-content" style="background-color:black">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="as-pic">
+					<img src="{% static 'img/blog-5.jpg'%}" style="height:450px">
+				</div>
+			</div>
+
+			<div class="col-lg-6">
+				<div class="as-text">
+					<div class="section-text">
+
+						<h2 style="color:azure">Fashion Modeling Wear</h2>
+						<p class="f-para" style="color:azure" >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+						<p class="s-para" style="color:azure">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="as-text">
+					<div class="section-text">
+
+						<h2 style="color:azure">Office Formal Suite for Men</h2>
+						<p class="f-para" style="color:azure">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+						<p class="s-para" style="color:azure">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="as-pic">
+					<img src="{% static 'img/person_1.jpg'%}" style="height:400px">
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="as-pic">
+					<img src="{% static 'img/portfolio-1.jpg'%}" style="height:450px">
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="as-text">
+
+					<h2 style="color:azure">Summar Wear for Men</h2>
+					<p class="f-para" style="color:azure">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+						<p class="s-para" style="color:azure">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="as-text">
+
+					<h2 style="color:azure">Party Wearing</h2>
+					<p class="f-para" style="color:azure">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+						<p class="s-para" style="color:azure">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+				</div>
+
+			</div>
+			<div class="col-lg-6">
+				<div class="as-pic">
+					<img src="{% static 'img/7.jpg'%}">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="body-content-2" style="background-color:black">
+	<div class="container">
+		<div class="row">
+
+				<div class="jumbotron content-center" style="background-color:black;background-colo;background-clip: content-box;color:white;border:1px solid white">
+
+						<article>
+							<img src="{% static 'img/images (47).jpg'%}" >
+
+							<div class="banner-title">
+								<h1>LET'S SHOPPING</h1><br><h2>1000 CASH BACK</h2>
+							<button type="button" class="btn btn-danger btn-md">   BUY NOW</button>
+							</div>
+						</article>
+				</div>
+
+
+		</div>
+
+		<div class="row">
+				<div class="col-lg-4">
+					<h2>Models</h2>
+						<div class="pic-box">
+							<img src="{% static 'img/images (45).jpg'%}">
+							<hr>
+							<h5 style="color:azure"><strong>Mi 9Pro</strong></h5>
+							<a href="#" class="btn btn-md btn-outline-danger btn-success" style="display:inline-block;float:right">View</a>
+						</div>
+				</div>
+				<div class="col-lg-4">
+					<h2>Models</h2>
+						<div class="pic-box">
+							<img src="{% static 'img/images (47).jpg' %}">
+							<hr>
+							<h5 style="color:azure"><strong>One Plus 8T</strong></h5>
+							<a href="#" class="btn btn-md btn-outline-info" style="display:inline-block;float:right">View</a>
+						</div>
+				</div>
+				<div class="col-lg-4">
+					<h2>Models</h2>
+						<div class="pic-box">
+							<img src="{% static 'img/images (46).jpg' %}">
+							<hr>
+							<h5 style="color:azure"><strong>Vivo Max Po</strong></h5>
+							<a href="#" class="btn btn-md btn-outline-primary" style="display:inline-block;float:right">View</a>
+						</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+</section>
+
+
+
+
+
+
+
+<!--Footer-->
+
+
+
+
+
+
+{% endblock content %}
+
+
+    <!--- script---->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

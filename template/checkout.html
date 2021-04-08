@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+</head>
+<body>
+{% block content %}
+<div class="jumbotron">
+    <div class="container">
+
+    </div>
+</div>
+<div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="box-element" id="form-wrapper">
+
+                </div>
+                <br>
+                <div class="box-element hidden" id="payment-info">
+                    <h3><strong>Payment Options</strong></h3>
+                    <br>
+                    <hr>
+                    <form class="form-inline">
+                        <lable for = "Name">Name :</lable>
+                            <input type="text" placeholder="Card Holder" class="form-control">
+                        <label for = "Card">Card :</label>
+                            <input type="number" placeholder="Card No.."  class="form-control">
+                        <hr>
+                        <br><br>
+                    </form><br>
+                    <form class="form-inline">
+                        <label for="date">Exp Date :</label>
+                            <input type="date" class="form-control" placeholder="Exp date..">
+                        <label for="cvv">Cvv :</label>
+                            <input type="number" placeholder="Cvv No.." class="form-control..">
+                        <button type="submit" class="btn btn-lg btn-outline-success">Transaction</button>
+                        <button type="reset" class="btn btn-lg btn-outline-danger">Cancle</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="box-element">
+                    <a class="btn btn-outline-dark " href="{% url 'mycart' %}">Back to Mycart</a>
+                    <hr>
+                <h3><strong>Order Summary</strong></h3>
+                    <div class="mycart-row">
+                        <div style="flex:2"><img src="#" class="row-img" ></div>
+                        <div style="flex:2">Product 1</div>
+                        <div style="flex:1">12000</div>
+                        <div style="flex:1">x2</div>
+                    </div>
+                    <h5>Item: 2</h5>
+                    <h5>Price: 12000</h5>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock content %}
+</body>
+</html>

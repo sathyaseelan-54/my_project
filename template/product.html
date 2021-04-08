@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<body>
+{% block content %}
+
+    <div class="container">
+        <div class="jumbotron">
+            <h2 style="text-align:center">ALL PRODUCT GER TO SHOPPING</h2>
+        </div>
+    </div>
+<section class="product" style="background-color:black">
+<div class="container">
+
+    <div class="row">
+        {% for Product in products %}
+            <div class="col-lg-4">
+            <img src="{{Product.imageURL}}"  class="thumbnail">
+            <div class="box-element product">
+                <h5><strong>{{Product.name}}</strong></h5>
+                <hr>
+                <button class="btn btn-sm btn-outline-success">Add to cart</button>
+                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                <h5 style="display:inline-block;float:right"><strong>Rs {{Product.price|floatformat:2}}</strong></h5>
+                <br>
+            </div>
+            <br><br>
+        </div>
+
+
+
+        {% endfor %}
+    </div>
+    <br>
+
+
+</div>
+
+<hr>
+</section>
+    <!---2nd row--->
+
+
+{% endblock content %}
+</body>
+</html>
