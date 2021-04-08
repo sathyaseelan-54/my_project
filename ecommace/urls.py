@@ -1,14 +1,12 @@
-from django.contrib import admin
-from django.urls import path,include
+from django.urls import path
+from . import views
 
-from django.conf.urls.static import static
-from django.conf import settings
-
-
+from .views import SignUpView
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include('myapp.urls')),
-    path('accounts/',include('django.contrib.auth.urls')),
-]
 
-urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
+    path('',views.index,name = 'index'),
+    path('mycart/',views.mycart,name = 'mycart'),
+    path('checkout/',views.checkout,name = 'checkout'),
+    path('product/',views.product,name = 'product'),
+    path('accounts/signup/',SignUpView,name = 'signup'),
+]
